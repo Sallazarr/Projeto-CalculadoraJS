@@ -26,6 +26,7 @@ const allowedKeys = [
   " ",
 ];
 
+
 document.querySelectorAll(".charKey").forEach(function (charKeyBtn) {
   charKeyBtn.addEventListener("click", function () {
     const value = charKeyBtn.dataset.value;
@@ -59,6 +60,11 @@ input.addEventListener("keydown", function (ev) {
 document.getElementById('equal').addEventListener('click', calculate)
 
 function calculate(){
+  if(input.value.trim() === ""){
+    resultInput.value = "Nothing to calculate"
+    return
+  }
+
 resultInput.value = "ERROR"
 resultInput.classList.add('error')
 
